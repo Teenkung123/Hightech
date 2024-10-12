@@ -8,7 +8,7 @@ const cors = require('cors'); // Import cors
 
 // Mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://admin:1234@hightech.dmuzq.mongodb.net/?retryWrites=true&w=majority&appName=Hightech')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:1234@hightech.dmuzq.mongodb.net/?retryWrites=true&w=majority&appName=Hightech')
     .then(() => console.log('Connection Successfully !'))
     .catch((err) => console.error('Connection failed:', err));
 
@@ -23,14 +23,14 @@ app.use(cors());
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug'); // ใช้ pug แทน jade
 
 // Middleware setup
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); // เสิร์ฟไฟล์ static จากโฟลเดอร์ public
 
 // Routes
 app.use('/', indexRouter);

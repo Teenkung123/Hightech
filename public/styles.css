@@ -1,7 +1,9 @@
 body {
-    background: url('/picture/Hightech_logo.png') no-repeat center center fixed;
+    background-image: url('picture/Hightech_logo.png');
     background-size: cover;
-    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .title {
