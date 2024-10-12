@@ -1,10 +1,10 @@
-var path = require('path');
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+// API test route
+router.get('/test', function(req, res, next) {
+  res.json({ message: 'API is working!' });
 });
 
 module.exports = router;
+
