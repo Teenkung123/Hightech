@@ -35,6 +35,11 @@ app.use('/api', indexRouter);
 app.use('/documents', documentsRouter);
 app.use('/users', usersRouter);
 
+// Fallback route for static files
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Catch 404
 app.use(function(req, res, next) {
   next(createError(404));
