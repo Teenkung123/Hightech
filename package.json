@@ -12,9 +12,14 @@
     "express": "~4.16.1",
     "express-validator": "^7.2.0",
     "http-errors": "~1.6.3",
-    "pug": "^3.0.2",      
+    "pug": "^3.0.2",
     "mongoose": "^8.7.1",
     "morgan": "~1.9.1"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
-
