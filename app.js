@@ -9,8 +9,8 @@ const cors = require('cors'); // Import cors
 // Mongoose connection
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:1234@hightech.dmuzq.mongodb.net/?retryWrites=true&w=majority&appName=Hightech')
-    .then(() => console.log('Connection Successfully !'))
-    .catch((err) => console.error('Connection failed:', err));
+    .then(() => console.log('MongoDB Connection Successfully!'))
+    .catch((err) => console.error('MongoDB Connection failed:', err));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,7 +23,7 @@ app.use(cors());
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug'); // ใช้ pug แทน jade
+app.set('view engine', 'pug'); // ใช้ pug เป็น view engine
 
 // Middleware setup
 app.use(logger('dev'));
