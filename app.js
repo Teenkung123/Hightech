@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://admin:1234@hightech.d
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var documentsRouter = require('./routes/documents'); // Import documents router
+app.use('/api/documents', documentsRouter);
 
 var app = express();
 
@@ -35,7 +36,6 @@ app.use(express.static(path.join(__dirname, 'public'))); // เสิร์ฟ�
 // Routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/documents', documentsRouter);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
